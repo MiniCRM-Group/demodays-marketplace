@@ -1,9 +1,12 @@
 <div id="content" fxLayout="column" fxLayoutAlign="center center">
-    <input type="file" accept="image/*">
+    <input #imageInput 
+        type="file" 
+        accept="image/*"
+        (change)="processImage(imageInput)">
 </div>
 <div id="footer" class="mat-elevation-z24" fxLayout="row" fxLayoutAlign="space-between center">
     <div></div>
-    <button mat-flat-button color="primary" routerLink="../details">
+    <button mat-flat-button color="primary" routerLink="../details" [disabled]="nextDisabled">
         Next
     </button>
 </div>

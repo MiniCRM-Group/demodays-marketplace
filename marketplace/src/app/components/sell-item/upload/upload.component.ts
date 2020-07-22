@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent implements OnInit {
+  private nextDisabled: boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  /**
+   * Calls when an image is uploaded.
+   * @param imageInput the image input
+   */
+  processImage(imageInput: any) {
+    this.nextDisabled = false;
   }
 
 }
