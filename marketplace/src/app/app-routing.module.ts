@@ -13,9 +13,9 @@ const routes: Routes = [
   { path: '', component: UserActionsComponent },
   { path: 'sell', component: SellItemComponent,
     children: [
-      { path:'upload', component: UploadComponent },
-      { path:'details', component: DetailsComponent },
-      { path:'submit', component: SubmitComponent },
+      { path: 'upload', component: UploadComponent },
+      { path: 'details', component: DetailsComponent },
+      { path: 'submit', component: SubmitComponent },
     ]},
   { path: 'buy', component: BuyItemComponent },
 ];
