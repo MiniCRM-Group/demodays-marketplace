@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "marketplace"
+  "defaultProject": "marketplace",
+  "cli": {
+    "analytics": "ed11ef2c-1457-46af-b361-0a790151f6b9"
+  }
 }

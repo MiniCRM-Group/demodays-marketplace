@@ -1,8 +1,23 @@
-<div id="content" fxLayout="column" fxLayoutAlign="space-evenly center">
-    <button mat-flat-button color="primary" routerLink="/sell">
-        <span class="mat-h1">Sell</span>
-    </button>
-    <button mat-flat-button color="accent" routerLink="/buy">
-        <span class="mat-h1">Buy</span>
-    </button>
-</div>
+
+
+<mat-tab-group mat-align-tabs="center" class="stickyy">
+    <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">shop</mat-icon>
+ 
+        </ng-template>
+        <app-sell-item #sellItem ></app-sell-item>
+      </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">storefront</mat-icon>
+        </ng-template>
+        <app-buy-item #buyItem ></app-buy-item>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">chat_bubble</mat-icon>
+        </ng-template>
+        </mat-tab>
+</mat-tab-group>
+
