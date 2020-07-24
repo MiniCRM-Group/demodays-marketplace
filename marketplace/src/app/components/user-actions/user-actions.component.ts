@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { BuyItemComponent } from '../buy-item/buy-item.component';
+import { SellItemComponent } from '../sell-item/sell-item.component';
 
 @Component({
   selector: 'app-user-actions',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-actions.component.css']
 })
 export class UserActionsComponent implements OnInit {
-
-  constructor() { }
+  @ViewChild('buyItemPage') buyItem: BuyItemComponent;
+  @ViewChild('sellItemPage') sellItem: SellItemComponent;
+  constructor() { 
+    
+  }
 
   ngOnInit(): void {
   }
