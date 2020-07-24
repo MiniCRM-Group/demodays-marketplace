@@ -10,8 +10,10 @@ export class RetrieveItemService {
     constructor(private http: HttpClient) {}
     getItems(): Observable<ItemResponse> {
         return of({
-           items :[
-                { id: 'qwerty',
+           items: 
+            [
+                { 
+                  id: 'qwerty',
                   name: 'Like New Logitech G332 Headset',
                   seller: 'John Bo',
                   description: 'Like New Logitech Red G332 Gamging Headset.Includes clear microphone. Connects with either 3.5mm jack or USB',
@@ -19,8 +21,8 @@ export class RetrieveItemService {
                   totalViews: 0,
                   imageUrls: ['logitech.jpg'],
                 },
-              
-                { id: 'abcd',
+                { 
+                  id: 'abcd',
                   name: 'Log',
                   seller: 'John John',
                   description: 'Used like new',
@@ -28,17 +30,16 @@ export class RetrieveItemService {
                   totalViews: 0,
                   imageUrls: ['image1'],
                 },
-              
-                { id: 'qwerty',
+                { 
+                  id: 'qwerty',
                   name: 'Electric Guitar',
                   seller: 'John John',
                   description: 'Used like new',
                   price: '50 USD',
                   totalViews: 0,
                   imageUrls: ['image1'],
-                }
-              
-              ]
+                }  
+            ]
         });
     }
 }
