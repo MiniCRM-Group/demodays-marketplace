@@ -1,33 +1,16 @@
 
+<br/>
+<div *ngFor = 'let item of items'>
 <div class="container">
-    <br/><br/><br/>
-    <mat-grid-list cols="2" rowHeight="2:1"><mat-grid-tile>
-<mat-card class="example-card">
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-     <h3>20$</h3>
-      <p>
-        City, State
-      </p>
-    </mat-card-content>
-   
-  </mat-card>
-</mat-grid-tile>
-<mat-grid-tile>
-    <mat-card class="example-card">
-          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-        <mat-card-content>
-         <h3>20$</h3>
-          <p>
-            City, State
-          </p>
-        </mat-card-content>
-       
-      </mat-card>
-    </mat-grid-tile>
-</mat-grid-list>
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>{{item.name}}</mat-card-title>
+        <mat-card-subtitle>{{item.seller}} | {{item.seller}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="assets/img/{{item.imageUrls[0]}}" alt="Photo of a Shiba Inu">
+    </mat-card>
+    <mat-divider></mat-divider><br/><br/><br/><br/><br/></div>
 </div>
-
 
 <button class="sticky" mat-fab color="primary" >
     <mat-icon>add_business</mat-icon>
