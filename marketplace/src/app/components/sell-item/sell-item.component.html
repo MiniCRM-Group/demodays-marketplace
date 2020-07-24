@@ -1,1 +1,5 @@
-<router-outlet></router-outlet>
+<div id="sell-item-container" [ngSwitch]="pages[selectedIndex]">
+    <app-upload *ngSwitchCase="'upload'" (switch)="handleOnSwitch($event)"></app-upload>
+    <app-details *ngSwitchCase="'details'" (switch)="handleOnSwitch($event)"></app-details>
+    <app-submit *ngSwitchCase="'submit'" (switch)="handleOnSwitch($event)"></app-submit>
+</div>

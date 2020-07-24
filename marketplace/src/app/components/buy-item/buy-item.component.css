@@ -3,6 +3,7 @@
       bottom: 40px;
       right: 20px;
   }
+
   .container {
     width: 95%;
     margin-left: auto;
@@ -16,6 +17,3 @@
   mat-grid-tile {
   min-height: 300px;
   }
-  
-  
-    
