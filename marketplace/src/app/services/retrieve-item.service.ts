@@ -1,5 +1,4 @@
 import { HttpClient } from "@angular/common/http";
-import { Observable, of } from "rxjs";
 import { ItemResponse, Item } from "../models/item";
 import { Injectable } from '@angular/core';
 
