@@ -23,6 +23,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatBadgeModule } from '@angular/material/badge';
 
 // Flex + Grid Layout
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -39,6 +41,8 @@ import { UploadComponent } from './components/sell-item/upload/upload.component'
 import { DetailsComponent } from './components/sell-item/details/details.component';
 import { SubmitComponent } from './components/sell-item/submit/submit.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { ChatComponent } from './components/chat/chat.component';
+import { BuyDetailsComponent } from './components/buy-details/buy-details.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     ItemCardComponent,
     UploadComponent,
     DetailsComponent,
-    SubmitComponent
+    SubmitComponent,
+    ChatComponent,
+    BuyDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -83,6 +89,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatSelectModule,
     MatMenuModule,
     MatTooltipModule,
+    MatGridListModule,
+    MatBadgeModule,
     MatTabsModule
   ],
   providers: [],
