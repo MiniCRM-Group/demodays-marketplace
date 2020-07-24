@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { PartialItem } from 'src/app/models/item';
 import { UploadItemService } from 'src/app/services/upload-item.service';
 
@@ -8,6 +8,7 @@ import { UploadItemService } from 'src/app/services/upload-item.service';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit, OnDestroy {
+  @Output() switch: EventEmitter<string> = new EventEmitter();
   item: PartialItem = {
     name: '',
     seller: '',
@@ -23,5 +24,13 @@ export class DetailsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.uploadItemService.currentItem = this.item;
+  }
+
+  onNext() {
+    this.switch.emit('next');
+  }
+
+  onPrev() {
+    this.switch.emit('prev');
   }
 }

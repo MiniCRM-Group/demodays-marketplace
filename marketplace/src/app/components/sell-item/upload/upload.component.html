@@ -27,7 +27,7 @@
 </div>
 <div id="footer" class="mat-elevation-z24" fxLayout="row" fxLayoutAlign="space-between center">
     <div></div>
-    <button mat-flat-button color="primary" routerLink="../details" [disabled]="nextDisabled">
+    <button mat-flat-button color="primary" (click)="onNext()" [disabled]="nextDisabled">
         Next
     </button>
 </div>

@@ -10,16 +10,18 @@ import { Injectable } from '@angular/core';
     providedIn: 'root'
 })
 export class UploadItemService {
-    private _endpoint = '/';
-
+    private _endpoint = '/api/upload-item';
+    // To view current item that user wants to sell
     private  _currentItem: PartialItem = {
       name: '',
-      seller: '',
+      seller: 'Roddy',
       description: '',
       price: '',
     };
-
+    // To view images that this user uploaded.
     private _uploadedImages: string[] = [];
+    // To view history of items that this user submitted.
+    private _submittedItems: UploadedItem[] = [];
 
     constructor(private http: HttpClient) {}
 
@@ -35,6 +37,11 @@ export class UploadItemService {
       this._currentItem = value;
     }
 
+    get submittedItems(): UploadedItem[] {
+      return this._submittedItems;
+    }
+
+    // called when user uploads image
     onImageUploaded(event: any, callback: () => void ) {
       if (event.target.files && event.target.files[0]) {
         const file = event.target.files[0];
@@ -49,6 +56,7 @@ export class UploadItemService {
       }
     }
 
+    // called when user removes images
     removeImage(index: number) {
       const newUploadedImages: string[] = [];
       for (let i = 0; i < this._uploadedImages.length; i++) {
@@ -59,12 +67,28 @@ export class UploadItemService {
       this._uploadedImages = newUploadedImages;
     }
 
+    // called when user submits item
     uploadItemToServer() {
       const itemToUpload: UploadedItem = {
         ...this._currentItem,
         uploadedImages: this._uploadedImages
       };
+      // adds to local history of items submitted
+      this._submittedItems.push(itemToUpload);
+      // submits item to server
       this.http.post<any>(this._endpoint, itemToUpload);
-      console.log(itemToUpload);
+      // reset current item and image urls
+      this.resetCurrentItem();
+    }
+
+    // called when user wants to create a new item or submitted
+    resetCurrentItem() {
+      this._currentItem = {
+        name: '',
+        price: '',
+        description: '',
+        seller: 'Roddy'
+      };
+      this._uploadedImages = [];
     }
 }

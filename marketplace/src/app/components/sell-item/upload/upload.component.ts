@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UploadItemService } from '../../../services/upload-item.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { UploadItemService } from '../../../services/upload-item.service';
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent implements OnInit {
+  @Output() switch = new EventEmitter<string>();
   nextDisabled = true;
   images: string[] = [];
   selectedIndex: number;
@@ -41,5 +42,9 @@ export class UploadComponent implements OnInit {
 
   handleSelect(index: number) {
     this.selectedIndex = index;
+  }
+
+  onNext() {
+    this.switch.emit('next');
   }
 }

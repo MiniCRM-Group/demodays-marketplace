@@ -3,3 +3,8 @@
     bottom: 0;
     width: 100%;
 }
+
+#sell-item-container {
+    height: 80vh;
+    width: 100%;
+}
