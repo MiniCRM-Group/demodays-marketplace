@@ -38,6 +38,7 @@ import { ItemCardComponent } from './components/item-card/item-card.component';
 import { UploadComponent } from './components/sell-item/upload/upload.component';
 import { DetailsComponent } from './components/sell-item/details/details.component';
 import { SubmitComponent } from './components/sell-item/submit/submit.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { SubmitComponent } from './components/sell-item/submit/submit.component'
     MatSelectModule,
     MatMenuModule,
     MatTooltipModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
