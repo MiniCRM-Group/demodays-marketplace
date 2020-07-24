@@ -1,20 +1,33 @@
-<mat-tab-group mat-align-tabs="center" class="stickyy">
+<div id="topnav" fxLayout="column" fxLayoutAlign="center stretch" class="sticky">
+  <div id="title-bar" fxLayout="row" fxLayoutAlign="space-between center">
+    <h1 class="mat-h1">Google Marketplace</h1>
+  </div>
+  <mat-tab-group mat-stretch-tabs>
     <mat-tab>
-        <ng-template mat-tab-label>
+      <ng-template mat-tab-label>
+        <div fxLayout="column" fxLayoutAlign="center center">
           <mat-icon class="example-tab-icon">shop</mat-icon>
-        </ng-template>
-        <app-sell-item #sellItem></app-sell-item>
-      </mat-tab>
+          <p class="mat-small no-margin">Sell</p>
+        </div>
+      </ng-template>
+      <app-sell-item #sellItem ></app-sell-item>
+    </mat-tab>
     <mat-tab>
-        <ng-template mat-tab-label>
+      <ng-template mat-tab-label>
+        <div fxLayout="column" fxLayoutAlign="center center">
           <mat-icon class="example-tab-icon">storefront</mat-icon>
-        </ng-template>
-        <app-buy-item #buyItem ></app-buy-item>
-      </mat-tab>
-      <mat-tab>
-        <ng-template mat-tab-label>
+          <p class="mat-small no-margin">Buy</p>
+        </div>
+      </ng-template>
+      <app-buy-item #buyItem ></app-buy-item>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <div fxLayout="column" fxLayoutAlign="center center">
           <mat-icon class="example-tab-icon">chat_bubble</mat-icon>
-        </ng-template>
-        </mat-tab>
-</mat-tab-group>
-
+          <p class="mat-small no-margin">Chat</p>
+        </div>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>
