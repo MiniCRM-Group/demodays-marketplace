@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Item, ItemResponse } from '../../models/item';
 import { RetrieveItemService } from '../../services/retrieve-item.service';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-buy-item',
