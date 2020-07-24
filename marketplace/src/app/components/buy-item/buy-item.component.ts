@@ -10,8 +10,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class BuyItemComponent implements OnInit {
   items: Item[];
-  constructor(private readonly itemService: RetrieveItemService) 
-  {
+  constructor(private readonly itemService: RetrieveItemService) {
      this.loadAllItems();
   }
 
