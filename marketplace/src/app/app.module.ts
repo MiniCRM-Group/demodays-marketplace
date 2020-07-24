@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 // Material imports
@@ -38,7 +40,6 @@ import { DetailsComponent } from './components/sell-item/details/details.compone
 import { SubmitComponent } from './components/sell-item/submit/submit.component';
 import { MatTabsModule } from '@angular/material/tabs';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,8 +55,10 @@ import { MatTabsModule } from '@angular/material/tabs';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    HttpClientModule,
 
     // Material
     BrowserAnimationsModule,

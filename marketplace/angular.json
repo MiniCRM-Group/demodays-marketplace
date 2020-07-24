@@ -63,7 +63,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "marketplace:build"
+           "browserTarget": "marketplace:build"
           },
           "configurations": {
             "production": {
@@ -125,6 +125,8 @@
   },
   "defaultProject": "marketplace",
   "cli": {
-    "analytics": "ed11ef2c-1457-46af-b361-0a790151f6b9"
+
+    "analytics": "08e0e426-050b-4c0c-8c0f-2c478ae2c774"
+
   }
 }

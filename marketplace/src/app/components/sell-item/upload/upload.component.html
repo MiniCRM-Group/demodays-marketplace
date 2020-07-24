@@ -1,1 +1,14 @@
-<p>upload works!</p>
+<div id="content" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="3%">
+    <mat-icon class="large-icon">add_a_photo</mat-icon>
+    <h2 class="mat-h3">Upload an image of the object you wish to sell.</h2>
+    <input #imageInput 
+        type="file" 
+        accept="image/*"
+        (change)="processImage(imageInput)">
+</div>
+<div id="footer" class="mat-elevation-z24" fxLayout="row" fxLayoutAlign="space-between center">
+    <div></div>
+    <button mat-flat-button color="primary" routerLink="../details" [disabled]="nextDisabled">
+        Next
+    </button>
+</div>
