@@ -1,12 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+
 #content {
     width: 100%;
     height: 100%;
 }
 
-#picture {
-    border: 1px solid #ddd;
-    width: 25%;
-    background-color: #C4C4C4;
+.small-image-container {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30%;
+    height: 100%;
+    background-color: white;
+}
+
+.wide-stretch {
+    width: 100%;
+}
+
+.tall {
+    height: 100%;
+}
+
+#topInfoDiv {
+    max-height: 50%;
+    padding: 2%;
 }
 
 #detailsDiv {

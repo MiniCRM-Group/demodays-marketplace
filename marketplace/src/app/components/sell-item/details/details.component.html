@@ -1,8 +1,9 @@
 <div id="content">
-    <form #detailsForm="ngForm">
-        <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="1%">
-            <div fxLayout="row" fxLayoutAlign="space-around center">
-                <div id="picture">Some picture here.</div>
+    <form #detailsForm="ngForm" class="tall">
+        <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="1%" class="tall">
+            <div id="topInfoDiv" fxLayout="row" fxLayoutAlign="space-evenly center" class="wide-stretch">
+                <div id="image" *ngIf="images.length !== 0" class="small-image-container" [style.background-image]="'url(' + images[selectedIndex] + ')'">
+                </div>
                 <div fxLayout="column" fxLayoutAlign="space-around center">
                     <mat-form-field appearance="standard">
                         <mat-label>Item Name</mat-label>

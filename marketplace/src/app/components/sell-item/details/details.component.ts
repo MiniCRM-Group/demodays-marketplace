@@ -15,11 +15,18 @@ export class DetailsComponent implements OnInit, OnDestroy {
     description: '',
     price: '$',
   };
+  images: string[] = [];
+  selectedIndex: number;
 
   constructor(private uploadItemService: UploadItemService) { }
 
   ngOnInit(): void {
     this.item = this.uploadItemService.currentItem;
+    this.images = this.uploadItemService.uploadedImages;
+    if (this.images.length > 0) {
+      this.selectedIndex = 0;
+    }
+
   }
 
   ngOnDestroy(): void {
