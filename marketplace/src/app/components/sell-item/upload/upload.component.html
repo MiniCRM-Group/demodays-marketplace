@@ -1,10 +1,29 @@
-<div id="content" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="3%">
-    <mat-icon class="large-icon">add_a_photo</mat-icon>
-    <h2 class="mat-h3">Upload an image of the object you wish to sell.</h2>
-    <input #imageInput 
-        type="file" 
-        accept="image/*"
-        (change)="processImage(imageInput)">
+<div id="content" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    
+    <!-- upload image directions -->
+    <div class="upload-image-description" *ngIf="images.length === 0" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px">
+        <mat-icon class="large-icon">add_a_photo</mat-icon>
+        <h2 class="mat-h3">Upload an image of the object you wish to sell.</h2>
+    </div>
+    
+    <!-- selected image -->
+    <div *ngIf="images.length !== 0" class="large-image-container" [style.background-image]="'url(' + images[selectedIndex] + ')'">
+        <button mat-mini-fab class="delete-button" (click)="handleDelete(selectedIndex)">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+
+    <!-- small image gallery -->
+    <div class="bottom-image-gallery" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="3px">
+        <div *ngFor="let image of images; index as id" class="small-image-container" [style.background-image]="'url(' + image+ ')'" (click)="handleSelect(id)">
+        </div>
+    </div>
+
+    <!-- upload image button -->
+    <label for="image-upload" class="image-upload-button">
+        <input #imageInput id="image-upload" type="file" accept="image/*" (change)="handleUpload($event)">
+        Select Photo
+    </label>
 </div>
 <div id="footer" class="mat-elevation-z24" fxLayout="row" fxLayoutAlign="space-between center">
     <div></div>
