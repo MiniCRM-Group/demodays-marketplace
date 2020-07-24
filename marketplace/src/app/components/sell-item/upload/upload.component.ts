@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ImageService } from 'src/app/services/image.service';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { UploadItemService } from '../../../services/upload-item.service';
 
 @Component({
   selector: 'app-upload',
@@ -7,28 +7,44 @@ import { ImageService } from 'src/app/services/image.service';
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent implements OnInit {
-  public nextDisabled: boolean = true;
+  @Output() switch = new EventEmitter<string>();
+  nextDisabled = true;
+  images: string[] = [];
+  selectedIndex: number;
 
-  constructor(private imageService: ImageService) { }
+  constructor(private uploadItemService: UploadItemService) { }
 
   ngOnInit(): void {
+    this.images = this.uploadItemService.uploadedImages;
+    if (this.images.length > 0) {
+      this.selectedIndex = 0;
+      this.nextDisabled = false;
+    }
   }
 
   /**
    * Called when an image is uploaded. Enables the next button with a valid image.
    * @param imageInput the image input
    */
-  processImage(imageInput: any) {
-    const file: File = imageInput.files[0];
-    const reader = new FileReader;
-    reader.addEventListener('load', (event: any) => {
-
-      //Don't call since no backend
-      //this.imageService.uploadImage(file).subscribe();
+  handleUpload(imageInput: any) {
+    this.uploadItemService.onImageUploaded(imageInput, () => {
+      this.selectedIndex = this.images.length - 1;
     });
-    
-    reader.readAsDataURL(file);
+    this.images = this.uploadItemService.uploadedImages;
     this.nextDisabled = false;
   }
 
+  handleDelete(index: number) {
+    this.uploadItemService.removeImage(index);
+    this.images = this.uploadItemService.uploadedImages;
+    this.selectedIndex = this.images.length - 1;
+  }
+
+  handleSelect(index: number) {
+    this.selectedIndex = index;
+  }
+
+  onNext() {
+    this.switch.emit('next');
+  }
 }

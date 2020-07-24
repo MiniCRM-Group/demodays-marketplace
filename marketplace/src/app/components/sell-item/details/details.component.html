@@ -35,13 +35,13 @@
     </form>
 </div>
 <div id="footer" class="mat-elevation-z24" fxLayout="row" fxLayoutAlign="space-between center">
-    <button mat-flat-button routerLink="../upload">
+    <button mat-flat-button (click)="onPrev()">
         Back
     </button>
     <button mat-flat-button 
         type="submit"
-        color="primary" 
-        routerLink="../submit"
+        color="primary"
+        (click)="onNext()"
         [disabled]="!detailsForm.form.valid">
         Submit
     </button>
