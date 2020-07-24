@@ -38,6 +38,9 @@ export class UploadComponent implements OnInit {
     this.uploadItemService.removeImage(index);
     this.images = this.uploadItemService.uploadedImages;
     this.selectedIndex = this.images.length - 1;
+    if (this.images.length == 0) {
+      this.nextDisabled = true;
+    }
   }
 
   handleSelect(index: number) {
