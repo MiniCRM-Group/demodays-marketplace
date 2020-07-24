@@ -1,19 +1,20 @@
 .sticky{
-    position: fixed;
-      bottom: 40px;
-      right: 20px;
-  }
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+}
 
-  .container {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .card {
-    max-width: 300px;
-    max-height: 300px;
-  }
+.container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  mat-grid-tile {
+.card {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+mat-grid-tile {
   min-height: 300px;
-  }
+}
