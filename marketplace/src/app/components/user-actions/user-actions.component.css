@@ -21,6 +21,11 @@
   color: gray;
 }
 
+#title-bar mat-icon {
+  margin: 12px;
+  color: gray;
+}
+
 #content {
   width: 100%;
   height: 100%
