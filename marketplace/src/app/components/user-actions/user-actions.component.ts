@@ -3,7 +3,6 @@ import { BuyItemComponent } from '../buy-item/buy-item.component';
 import { SellItemComponent } from '../sell-item/sell-item.component';
 import { ChatComponent } from '../chat/chat.component';
 
-
 @Component({
   selector: 'app-user-actions',
   templateUrl: './user-actions.component.html',
