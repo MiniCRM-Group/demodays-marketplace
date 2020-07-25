@@ -1,1 +1,13 @@
-<p>browse works!</p>
+
+<br/>
+<div *ngFor = 'let item of items'>
+<div class="container">
+    <mat-card class="card" (click)="onClick()">
+      <mat-card-header>
+        <mat-card-title>{{item.name}}</mat-card-title>
+        <mat-card-subtitle>{{item.seller}} | {{item.price}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="assets/img/{{item.imageUrls[0]}}" alt="Photo of a Shiba Inu">
+    </mat-card>
+    <mat-divider></mat-divider><br/><br/><br/><br/><br/></div>
+</div>
