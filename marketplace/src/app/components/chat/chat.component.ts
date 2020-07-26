@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 })
 export class ChatComponent implements OnInit {
   currentPage = 'chat-list';
-  convoName: string;
   constructor(private chatService: ChatService) { }
 
   ngOnInit(): void {
@@ -18,9 +17,5 @@ export class ChatComponent implements OnInit {
 
   handleNavigation(page: string) {
     this.currentPage = page;
-  }
-
-  handleConversationClicked(convoName: string) {
-    this.convoName = convoName;
   }
 }

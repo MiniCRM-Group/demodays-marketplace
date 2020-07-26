@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 })
 export class ChatListComponent implements OnInit {
   @Output() switch: EventEmitter<string> = new EventEmitter();
-  @Output() conversationClicked: EventEmitter<string> = new EventEmitter();
   chats: Conversation[] = [];
   constructor(private readonly chatService: ChatService, private readonly changeDetector: ChangeDetectorRef) { }
 
@@ -23,7 +22,6 @@ export class ChatListComponent implements OnInit {
 
   public handleClickConversation(convo: Conversation) {
     this.switch.emit('conversation');
-    this.conversationClicked.emit(convo.name);
     this.chatService.clickOnConversation(convo.name);
   }
 }
