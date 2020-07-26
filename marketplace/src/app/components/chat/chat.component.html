@@ -1,12 +1,10 @@
 <div class="container" [ngSwitch]="currentPage">
   <app-chat-list
     *ngSwitchCase="'chat-list'"
-    (conversationClicked)="handleConversationClicked($event)"
     (switch)="handleNavigation($event)">
   </app-chat-list>
   <app-conversation
     *ngSwitchCase="'conversation'"
-    [convoName]="convoName"
     (switch)="handleNavigation($event)">
   </app-conversation>
 </div>

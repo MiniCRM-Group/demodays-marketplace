@@ -9,7 +9,7 @@ import { ChatService } from '../../services/chat.service';
   styleUrls: ['./buy-item.component.css']
 })
 export class BuyItemComponent implements OnInit {
-  @Output() onItemClicked: EventEmitter<Item> = new EventEmitter();
+  @Output() onMessageClicked: EventEmitter<Item> = new EventEmitter();
   items: Item[];
   constructor(private readonly itemService: RetrieveItemService, private readonly chatService: ChatService) {
      this.loadAllItems();
@@ -26,6 +26,6 @@ export class BuyItemComponent implements OnInit {
 
   handleMessageButtonClicked(item: Item) {
     this.chatService.createConversation(item);
-    this.onItemClicked.emit(item);
+    this.onMessageClicked.emit(item);
   }
 }

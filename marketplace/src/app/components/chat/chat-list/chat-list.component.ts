@@ -1,7 +1,6 @@
 import { Component, OnInit, EventEmitter, Output, Input, ChangeDetectorRef } from '@angular/core';
 import { ChatService } from '../../../services/chat.service';
 import { Conversation } from '../../../models/conversation';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-chat-list',

@@ -9,7 +9,7 @@
         mat-icon-button>
         <mat-icon>account_circle</mat-icon>
     </button>
-    <span>{{conversation.name}}</span>
+    <span class="title">{{conversation.name}}</span>
 </mat-toolbar>
 <div id="conversation-history" fxLayout="column">
     <div *ngFor="let msg of conversation.history" [class]="msg.fromCurrentUser ? 'thisUser' : 'otherUser'">
