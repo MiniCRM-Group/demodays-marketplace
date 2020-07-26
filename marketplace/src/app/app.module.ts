@@ -42,7 +42,8 @@ import { DetailsComponent } from './components/sell-item/details/details.compone
 import { SubmitComponent } from './components/sell-item/submit/submit.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ChatComponent } from './components/chat/chat.component';
-import { BuyDetailsComponent } from './components/buy-details/buy-details.component';
+import { BrowseComponent } from './components/buy-item/browse/browse.component';
+import { ListingDetailsComponent } from './components/buy-item/listing-details/listing-details.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { BuyDetailsComponent } from './components/buy-details/buy-details.compon
     DetailsComponent,
     SubmitComponent,
     ChatComponent,
-    BuyDetailsComponent
+    BrowseComponent,
+    ListingDetailsComponent
   ],
   imports: [
     BrowserModule,
