@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { BuyItemComponent } from '../buy-item/buy-item.component';
 import { SellItemComponent } from '../sell-item/sell-item.component';
 import { ChatComponent } from '../chat/chat.component';
+import { Item } from '../../models/item';
 
 @Component({
   selector: 'app-user-actions',
@@ -18,5 +19,4 @@ export class UserActionsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

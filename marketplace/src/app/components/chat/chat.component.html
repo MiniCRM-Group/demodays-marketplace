@@ -1,25 +1,12 @@
-<div class="container">
-    <br/>
-    <mat-list>
-        <mat-list-item> <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title><span matBadge="4" matBadgeOverlap="false">Electric boiler</span></mat-card-title>
-            <mat-card-subtitle>John John</mat-card-subtitle>
-          </mat-card-header></mat-list-item>  <mat-divider></mat-divider><br/>
-          <mat-list-item> <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title><span matBadge="4" matBadgeOverlap="false">Electric boiler</span></mat-card-title>
-            <mat-card-subtitle>John John</mat-card-subtitle>
-          </mat-card-header></mat-list-item>  <mat-divider></mat-divider><br/>
-          <mat-list-item> <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title><span matBadge="4" matBadgeOverlap="false">Electric boiler</span></mat-card-title>
-            <mat-card-subtitle>John John</mat-card-subtitle>
-          </mat-card-header></mat-list-item>  <mat-divider></mat-divider><br/>
-          <mat-list-item> <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title><span matBadge="4" matBadgeOverlap="false">Electric boiler</span></mat-card-title>
-            <mat-card-subtitle>John John</mat-card-subtitle>
-          </mat-card-header></mat-list-item>  <mat-divider></mat-divider><br/>
-    </mat-list>
+<div class="container" [ngSwitch]="currentPage">
+  <app-chat-list
+    *ngSwitchCase="'chat-list'"
+    (conversationClicked)="handleConversationClicked($event)"
+    (switch)="handleNavigation($event)">
+  </app-chat-list>
+  <app-conversation
+    *ngSwitchCase="'conversation'"
+    [convoName]="convoName"
+    (switch)="handleNavigation($event)">
+  </app-conversation>
 </div>

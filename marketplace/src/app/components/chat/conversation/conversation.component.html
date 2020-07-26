@@ -1,0 +1,41 @@
+<mat-toolbar>
+    <button
+        mat-icon-button
+        (click)="handleClickBackButton()"
+        color="primary">
+        <mat-icon>arrow_back_ios</mat-icon>
+    </button>
+    <button
+        mat-icon-button>
+        <mat-icon>account_circle</mat-icon>
+    </button>
+    <span>{{conversation.name}}</span>
+</mat-toolbar>
+<div id="conversation-history" fxLayout="column">
+    <div *ngFor="let msg of conversation.history" [class]="msg.fromCurrentUser ? 'thisUser' : 'otherUser'">
+        <mat-icon *ngIf="!msg.fromCurrentUser" class="profileIcon">account_circle</mat-icon>
+        <div class="message">
+            <div class="text">
+                <span>{{msg.text}}</span>
+            </div>
+            <div class="name-date">
+                <span>{{msg.fromCurrentUser ? msg.date : msg.name + " · " + msg.date}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">    
+    <div *ngIf="otherUserTyping" id="otherUserTyping">
+        <span>{{otherUserTyping}} is typing </span>
+    </div>
+    <div class="mat-elevation-z8" fxLayout="row" fxLayoutAlign="end">
+        <input id="message-textbox" type="text" placeholder="Aa" [(ngModel)]="currentTextMessage" />
+        <button 
+            mat-icon-button
+            (click)="handleSendMessageButton()"
+            color="primary"
+            [disabled]="currentTextMessage.trim().length === 0">
+            <mat-icon>send</mat-icon>
+        </button>
+    </div>
+</div>

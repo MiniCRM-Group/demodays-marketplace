@@ -1,0 +1,15 @@
+<mat-list>
+  <div *ngFor="let chat of chats" >
+    <mat-list-item (click)="handleClickConversation(chat)"> 
+      <mat-icon mat-list-icon>account_circle</mat-icon>
+      <div class="title" mat-line>{{chat.name}}</div>
+      <div mat-line>
+        {{
+          chat.history[chat.history.length-1].fromCurrentUser ?
+          "You" :
+          chat.history[chat.history.length-1].name
+        }}: {{chat.history[chat.history.length-1].text}}</div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </div>
+</mat-list>
