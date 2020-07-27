@@ -42,7 +42,7 @@ export class ConversationComponent implements OnInit {
   }
 
   pretendOtherUserTyping() {
-    this.otherUserTyping = 'John Smith';
+    this.otherUserTyping = this.conversation.history[0].name;
     setTimeout(() => {
       const msg: Message = {
         name: this.conversation.history[0].name,
@@ -50,7 +50,6 @@ export class ConversationComponent implements OnInit {
         text: 'I can offer you a 5% discount!',
         fromCurrentUser: false
       };
-      this.conversation.history.push(msg);
       this.chatService.pushMessageToConvo(this.conversation.name, msg);
       this.otherUserTyping = undefined;
     }, 3000);

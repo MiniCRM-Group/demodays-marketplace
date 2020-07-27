@@ -9,23 +9,25 @@ import { ChatService } from '../../services/chat.service';
   styleUrls: ['./buy-item.component.css']
 })
 export class BuyItemComponent implements OnInit {
-  @Output() onMessageClicked: EventEmitter<Item> = new EventEmitter();
+  @Output() messageClicked: EventEmitter<Item> = new EventEmitter();
   items: Item[];
-  constructor(private readonly itemService: RetrieveItemService, private readonly chatService: ChatService) {
-     this.loadAllItems();
+  constructor(private readonly chatService: ChatService) {
   }
+  pages = ['browse', 'details'];
+  selectedIndex = 0;
 
   ngOnInit(): void {
   }
 
-  loadAllItems(): void {
-    this.itemService.getItems().subscribe((responses: ItemResponse) =>{
-      this.items = responses.items;
-    });
+  handleOnSwitch(value: string) {
+    if (value === 'prev' && this.selectedIndex > 0) {
+      this.selectedIndex--;
+    } else if (value === 'next') {
+      this.selectedIndex = (this.selectedIndex + 1) % this.pages.length;
+    }
   }
 
   handleMessageButtonClicked(item: Item) {
-    this.chatService.createConversation(item);
-    this.onMessageClicked.emit(item);
+    this.messageClicked.emit(item);
   }
 }

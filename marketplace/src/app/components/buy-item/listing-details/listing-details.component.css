@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 3%;
+    background-color: white;
+}
+
+.spacer {
+    height: 20%;
+    width:100%;
+}
+.tiny-icon {
+    transform: scale(.75);
+}
+#content {
+    white-space: pre-line;
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+}
+
+#descriptionDiv {
+    color: gray;
+    padding: 3%;
+}
